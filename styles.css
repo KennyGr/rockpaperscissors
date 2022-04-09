@@ -1,0 +1,90 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: rgb(80, 80, 80);
+
+}
+
+body {
+    font-family: 'Bebas Neue', Geneva, Tahoma, sans-serif;
+}
+
+.choices {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.header {
+    background: rgb(199, 121, 255);
+    text-align: center;
+    font-size: 70px;
+    font-weight: 100;
+    padding: 5px;
+}
+
+.button {
+    transition-duration: 0.4s;
+    height: 200px;
+    width: 200px;
+    font-size: 70px;
+    background: rgb(138, 138, 138);
+    border: 5px solid;
+    border-color: rgb(199, 121, 255);
+}
+
+.button:hover {
+    background-color: rgb(126, 126, 126);
+}
+
+.button:active {
+    background-color: rgb(102, 101, 101);
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    text-align: center;
+}
+
+.result {
+    text-align: center;
+    justify-content: center;
+    margin: 30px;
+    margin-bottom: 0px;
+    font-size: 45px;
+    color: white;
+    
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    font-size: 50px;
+    background: gray;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.score {
+    border: 7px solid;
+    border-color: rgb(54, 54, 54);
+    font-size: 50px;
+    padding: 5px 20px;
+}

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"></link>
     <script src="scripts.js" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +14,39 @@
 
 <body>
 
-    <button id="rock">✊</button>
-    <button id="paper">✌️</button>
-    <button id="scissors">🖐</button>
-
-    <div id="results">
-        
+    <div class="header">
+        <p style="margin: 50px">Rock, Paper, Scissors</p>
     </div>
+
+    <div class="scoreboard">
+        <div class="left">
+            <p style="margin: 30px 20px">You: </p>
+            <p style="margin: 30px 0px" class="score" id="playerScoreboard">0</p>
+        </div>
+        <div class="right">
+            <p style="margin: 30px 20px">CPU: </p>
+            <p style="margin: 30px 0px" class="score" id="computerScoreboard">0</p>
+        </div>
+    </div>
+
+    <div class="choices">
+        <button class="button" id="rock">✊</button>
+        <button class="button" id="paper">✌️</button>
+        <button class="button" id="scissors">🖐</button>
+
+    </div>
+
+    <div id ="results" class="result">
+
+    </div>
+
+    <div class="footer">
+        <p>Created by Kenny G</p>
+    </div>
+
+    <audio src="sounds/boom.mp3" id="boom"></audio>
+    <audio src="sounds/victory.mp3" id="victory"></audio>
+    <audio src="sounds/defeat.mp3" id="defeat"></audio>
     
 </body>
 </html>
