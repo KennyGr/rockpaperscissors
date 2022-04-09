@@ -11,36 +11,26 @@ const victorySound = document.querySelector("#victory");
 const defeatSound = document.querySelector("#defeat");
 
 rockButton.addEventListener("click", function() {
-    if (computerScore < 4 && playerScore < 4) {
         playRound("rock", computerPlay());
         boomSound.volume = 0.25;
         boomSound.play();
         boomSound.currentTime = 0;
-    } else {
-        playRound("rock", computerPlay());
-    }
+
 });
 
 paperButton.addEventListener("click", function() {
-    if (computerScore < 4 && playerScore < 4) {
         playRound("paper", computerPlay());
         boomSound.volume = 0.25;
         boomSound.play();
         boomSound.currentTime = 0;
-    } else {
-        playRound("rock", computerPlay());
-    }
 });
 
 scissorsButton.addEventListener("click", function() {
-    if (computerScore < 4 && playerScore < 4) {
         playRound("scissors", computerPlay());
         boomSound.volume = 0.25;
         boomSound.play();
         boomSound.currentTime = 0;
-    } else {
-        playRound("rock", computerPlay());
-    }
+
 });
 
 function computerPlay() {
@@ -96,14 +86,19 @@ function playRound(playerSelection, computerSelection) {
         if (computerScore == 5) {
             computerScoreboard.textContent = "5"
             para.textContent = "Game Over! You Lose!";
-            defeatSound.volume = 0.25;
-            defeatSound.play();
+            setTimeout(function(){
+                defeatSound.volume = 0.25;
+                defeatSound.play();
+            }, 1700)
         } else {
             playerScoreboard.textContent = "5"
             para.textContent = "Game Over! You Win!";
-            victorySound.volume = 0.25;
-            victorySound.play();
+            setTimeout(function(){
+                victorySound.volume = 0.25;
+                victorySound.play();
+            }, 1700)
         }
+
         results.appendChild(para);
         rockButton.disabled = true;
         paperButton.disabled = true;
