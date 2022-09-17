@@ -15,7 +15,7 @@
 <body>
 
     <div class="header">
-        <p style="margin: 50px">Rock, Paper, Scissors</p>
+        <p style="margin: 40px">Rock, Paper, Scissors</p>
     </div>
 
     <div class="scoreboard">
@@ -30,23 +30,34 @@
     </div>
 
     <div class="choices">
+        <div class="pick">
+            <p>Your Pick</p>
+            <button class="pick-box" id="player-pick"></button>
+        </div>
+        
         <button class="button" id="rock">✊</button>
         <button class="button" id="paper">🖐</button>
         <button class="button" id="scissors">✌️</button>
 
+        <div class="pick">
+            <p>CPU Pick</p>
+            <button class="pick-box" id="cpu-pick"></button>
+        </div>
+
     </div>
 
-    <div id ="results" class="result">
-
-    </div>
+    <div id ="results" class="result"></div>
 
     <div class="footer">
         <p>Created by Kenny G</p>
     </div>
 
-    <audio src="sounds/boom.mp3" id="boom"></audio>
+    <audio src="sounds/boop.mp3" id="boop"></audio>
     <audio src="sounds/victory.mp3" id="victory"></audio>
     <audio src="sounds/defeat.mp3" id="defeat"></audio>
+    <audio src="sounds/aww.mp3" id="tie"></audio>
+    <audio src="sounds/win.mp3" id="winRound"></audio>
+    <audio src="sounds/wrong.mp3" id="loseRound"></audio>
     
 </body>
 </html>
