@@ -164,7 +164,7 @@ function displayResult() {
         playTieSound();
     }
 
-    if (playerScore < 1 && computerScore < 1) {
+    if (playerScore < 3 && computerScore < 3) {
     para.textContent = resultMessage;
     results.appendChild(para);
 
@@ -172,19 +172,21 @@ function displayResult() {
     computerScoreboard.textContent = computerScore
 
     } else {
-        if (computerScore == 1) {
-            computerScoreboard.textContent = "1"
+        if (computerScore == 3) {
+            computerScoreboard.textContent = "3"
             para.textContent = "Game Over! You Lose!";
-            para.appendChild(makeButton);
+            results.appendChild(makeButton);
+            makeButton.classList.add("button-hover");
             makeButton.textContent = "Play Again";
             setTimeout(function(){
                 defeatSound.volume = 0.25;
                 defeatSound.play();
             }, 1700)
         } else {
-            playerScoreboard.textContent = "1"
+            playerScoreboard.textContent = "3"
             para.textContent = "Game Over! You Win!";
             results.appendChild(makeButton);
+            makeButton.classList.add("button-hover");
             makeButton.textContent = "Play Again";
 
             makeButton.addEventListener("click", function() {
