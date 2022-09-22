@@ -181,7 +181,6 @@ function displayResult() {
             results.appendChild(makeButton);
             makeButton.classList.add("button-hover");
             makeButton.textContent = "Play Again";
-
             makeButton.addEventListener("click", function() {
                 rockButton.disabled = false;
                 paperButton.disabled = false;
@@ -197,7 +196,7 @@ function displayResult() {
                 para.remove();
                 makeButton.remove();
             })
-            
+
             setTimeout(function(){
                 defeatSound.volume = 0.25;
                 defeatSound.play();
