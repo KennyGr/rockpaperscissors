@@ -168,22 +168,42 @@ function displayResult() {
     para.textContent = resultMessage;
     results.appendChild(para);
 
-    playerScoreboard.textContent = playerScore
-    computerScoreboard.textContent = computerScore
+        if (resultMessage.includes("Win")) {
+            computerScoreboard.textContent = computerScoreboard.textContent.slice(0, -3);
+        } else if (resultMessage.includes("Lose")) {
+            playerScoreboard.textContent = playerScoreboard.textContent.slice(0, -3);
+        };
 
     } else {
         if (computerScore == 3) {
-            computerScoreboard.textContent = "3"
+            playerScoreboard.textContent = "‎";
             para.textContent = "Game Over! You Lose!";
             results.appendChild(makeButton);
             makeButton.classList.add("button-hover");
             makeButton.textContent = "Play Again";
+
+            makeButton.addEventListener("click", function() {
+                rockButton.disabled = false;
+                paperButton.disabled = false;
+                scissorsButton.disabled = false;
+
+                computerScore = 0;
+                playerScore = 0;
+                computerScoreboard.textContent = "💜 💜 💜";
+                playerScoreboard.textContent = "💜 💜 💜";
+                playerPick.textContent = "";
+                cpuPick.textContent = "";
+
+                para.remove();
+                makeButton.remove();
+            })
+            
             setTimeout(function(){
                 defeatSound.volume = 0.25;
                 defeatSound.play();
             }, 1700)
         } else {
-            playerScoreboard.textContent = "3"
+            computerScoreboard.textContent = "‎";
             para.textContent = "Game Over! You Win!";
             results.appendChild(makeButton);
             makeButton.classList.add("button-hover");
@@ -196,8 +216,10 @@ function displayResult() {
 
                 computerScore = 0;
                 playerScore = 0;
-                computerScoreboard.textContent = "0";
-                playerScoreboard.textContent = "0";
+                computerScoreboard.textContent = "💜 💜 💜";
+                playerScoreboard.textContent = "💜 💜 💜";
+                playerPick.textContent = "";
+                cpuPick.textContent = "";
 
                 para.remove();
                 makeButton.remove();
